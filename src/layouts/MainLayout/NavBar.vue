@@ -17,10 +17,7 @@
             pointer-events-none
           "
         >
-          <iconify-icon
-            icon="ant-design:search-outlined"
-            class="text-gray-400"
-          />
+          <Icon icon="ant-design:search-outlined" class="text-gray-400" />
         </div>
         <input
           id="search"
@@ -51,7 +48,7 @@
       class="relative flex items-center lg:max-w-sm rounded-3xl bg-[#2d2d2d]"
     >
       <div class="flex items-center px-4">
-        <iconify-icon icon="carbon:dot-mark" class="text-[#53F3C3]" />
+        <Icon icon="carbon:dot-mark" class="text-[#53F3C3]" />
         <p class="text-white">ETH</p>
       </div>
       <button
@@ -73,7 +70,11 @@
 </template>
 
 <script>
+import { Icon } from "@iconify/vue";
 export default {
   name: "nav-bar",
+  components: {
+    Icon,
+  },
 };
 </script>
