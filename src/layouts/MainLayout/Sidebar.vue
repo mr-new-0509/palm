@@ -51,26 +51,26 @@ export default {
   components: {
     Icon,
   },
-  data: () => ({
-    links: [
-      {
-        icon: "humbleicons:dashboard",
-        to: "/",
-      },
-      {
-        icon: "ic:sharp-swap-horiz",
-        to: "/swap",
-      },
-      {
-        icon: "fluent:lock-closed-24-regular",
-        to: "/staking",
-      },
-    ],
-  }),
-  computed: {
-    path() {
-      return this.$route.path;
-    },
-  },
+  // data: () => ({
+  //   links: [
+  //     {
+  //       icon: "humbleicons:dashboard",
+  //       to: "/",
+  //     },
+  //     {
+  //       icon: "ic:sharp-swap-horiz",
+  //       to: "/swap",
+  //     },
+  //     {
+  //       icon: "fluent:lock-closed-24-regular",
+  //       to: "/staking",
+  //     },
+  //   ],
+  // }),
+  // computed: {
+  //   path() {
+  //     return this.$route.path;
+  //   },
+  // },
 };
 </script>
