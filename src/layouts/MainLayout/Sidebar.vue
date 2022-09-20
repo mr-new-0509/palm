@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center px-6">
     <!-- Home button -->
-    <button class="mt-12 text-[#9596A3] text-2xl">
+    <router-link class="mt-12 text-[#9596A3] text-2xl" to="/">
       <iconify-icon icon="ant-design:home-outlined" />
-    </button>
+    </router-link>
 
     <div
       class="
@@ -17,7 +17,7 @@
       "
     >
       <!-- Dashboard button -->
-      <button
+      <router-link
         class="
           rounded-full
           bg-[#2EB9FF]
@@ -27,19 +27,20 @@
           flex flex-col
           justify-center
         "
+        to="/dashboard"
       >
         <iconify-icon icon="humbleicons:dashboard" />
-      </button>
+      </router-link>
 
       <!-- Swap button -->
-      <button class="mt-3 text-2xl text-white">
+      <router-link class="mt-3 text-2xl text-white" to="/swap">
         <iconify-icon icon="ic:sharp-swap-horiz" />
-      </button>
+      </router-link>
 
       <!-- Staking button -->
-      <button class="mt-3 text-2xl text-white">
+      <router-link class="mt-3 text-2xl text-white" to="/staking">
         <iconify-icon icon="fluent:lock-closed-24-regular" />
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
