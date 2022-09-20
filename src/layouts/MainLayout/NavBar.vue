@@ -60,6 +60,7 @@
           rounded-3xl
           bg-[#4b4b4b]
           text-white text-sm
+          transition-all
           hover:bg-gray-700
         "
       >
