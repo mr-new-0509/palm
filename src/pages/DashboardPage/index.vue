@@ -92,23 +92,57 @@
           />
         </div>
       </div>
+
+      <!-- Tokens Burnt to Date -->
+      <div class="mt-12 flex justify-between">
+        <div class="mt-4">
+          <p class="text-xl text-white font-semibold">Tokens Burnt to Date</p>
+          <p class="text-4xl text-white font-bold">52%</p>
+        </div>
+
+        <Doughnut
+          :chart-options="chartOptions"
+          :chart-data="chartData"
+          :chart-id="chartId"
+          :dataset-id-key="datasetIdKey"
+          :plugins="plugins"
+          :css-classes="cssClasses"
+          :styles="styles"
+          :width="width"
+          :height="height"
+        />
+      </div>
     </div>
+
     <div class="col-span-2"></div>
   </div>
 </template>
 
 <script>
 import { Icon } from "@iconify/vue";
+import { defineAsyncComponent } from "@vue/runtime-core";
+import { Doughnut } from "vue-chartjs";
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+} from "chart.js";
 import { PALM_TOKEN_ADDRESS } from "../../utils/constants";
 import { handleLongText } from "../../utils/functions";
-import { defineAsyncComponent } from "@vue/runtime-core";
+
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 export default {
   name: "dashboard-page",
   components: {
     Icon,
+    Doughnut,
     InfoCard: defineAsyncComponent(() => import("./InfoCard.vue")),
   },
+
   data: () => ({
     palmTokenAddress: PALM_TOKEN_ADDRESS,
     tokenInfos: [
@@ -162,7 +196,49 @@ export default {
         isMoney: true,
       },
     ],
+    chartData: {
+      datasets: [
+        {
+          backgroundColor: ["#2EB9FF", "#404040"],
+          data: [45, 55],
+        },
+      ],
+    },
+    chartOptions: {
+      responsive: true,
+    },
   }),
+
+  props: {
+    chartId: {
+      type: String,
+      default: "bar-chart",
+    },
+    datasetIdKey: {
+      type: String,
+      default: "label",
+    },
+    width: {
+      type: Number,
+      default: 200,
+    },
+    height: {
+      type: Number,
+      default: 200,
+    },
+    cssClasses: {
+      default: "",
+      type: String,
+    },
+    styles: {
+      type: Object,
+      default: () => {},
+    },
+    plugins: {
+      type: Array,
+      default: () => [],
+    },
+  },
   methods: {
     handleLongText,
   },
