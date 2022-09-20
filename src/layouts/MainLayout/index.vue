@@ -1,10 +1,12 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#121212]">
-    <nav-bar />
-    <div class="grow-1 flex">
-      <side-barr />
-      <div class="grow-1">
-        <router-view />
+  <div class="bg-[#121212]">
+    <div class="flex flex-col min-h-screen">
+      <nav-bar />
+      <div class="relative">
+        <side-barr />
+        <div class="ml-28">
+          <router-view />
+        </div>
       </div>
     </div>
   </div>
@@ -16,7 +18,7 @@ export default {
   name: "main-layout",
   components: {
     NavBar: defineAsyncComponent(() => import("./NavBar")),
-    SideBarr: defineAsyncComponent(() => import("./SideBarr"))
+    SideBarr: defineAsyncComponent(() => import("./SideBarr")),
   },
 };
 </script>

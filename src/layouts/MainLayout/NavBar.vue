@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 flex justify-between items-center">
+  <div class="p-6 flex justify-between items-center sticky bg-[#121212] top-0 z-20">
     <!-- Logo -->
     <img src="/assets/images/logo.png" alt="logo" />
 
@@ -19,6 +19,7 @@
         >
           <Icon icon="ant-design:search-outlined" class="text-gray-400" />
         </div>
+
         <input
           id="search"
           name="search"
