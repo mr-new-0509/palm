@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen bg-[#121212]">
     <nav-bar />
     <div class="grow-1 flex">
-      <side-bar />
+      <!-- <side-bar /> -->
       <div class="grow-1">
         <router-view />
       </div>
@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import NavBar from "./NavBar";
-import SideBar from "./SideBar";
-
+import { defineAsyncComponent } from "@vue/runtime-core";
 export default {
   name: "main-layout",
   components: {
-    NavBar,
-    SideBar,
+    NavBar: defineAsyncComponent(() => import("./NavBar")),
+    // SideBar: defineAsyncComponent(() => import("./SideBar")),
   },
 };
 </script>
