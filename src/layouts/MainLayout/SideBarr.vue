@@ -47,7 +47,7 @@
 import { Icon } from "@iconify/vue";
 
 export default {
-  name: "side-bar",
+  name: "side-barr",
   components: {
     Icon,
   },
