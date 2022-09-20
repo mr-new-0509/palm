@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center px-6">
+  <div class="flex flex-col items-center pl-6 pr-8">
     <!-- Home button -->
     <router-link class="mt-12 text-[#9596A3] text-2xl" to="/">
       <Icon icon="ant-design:home-outlined" />
