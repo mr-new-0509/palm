@@ -11,12 +11,14 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from "@vue/runtime-core";
+import NavBar from "./NavBar";
+import SideBar from "./SideBar";
+
 export default {
   name: "main-layout",
   components: {
-    NavBar: defineAsyncComponent(() => import("./NavBar")),
-    SideBar: defineAsyncComponent(() => import("./SideBar")),
+    NavBar,
+    SideBar,
   },
 };
 </script>

@@ -76,9 +76,7 @@
       </div>
 
       <!-- Cards of meta info -->
-      <div class="">
-
-      </div>
+      <div class=""></div>
     </div>
     <div class="col-span-8"></div>
   </div>
