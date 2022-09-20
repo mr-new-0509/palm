@@ -5,7 +5,7 @@
       <div class="flex items-center">
         <!-- logo -->
         <div class="rounded-2xl bg-black border-2 border-white px-2 py-3">
-          <img src="/assets/images/fav_logo.png" alt="palm" width="40" />
+          <img src="/assets/images/fav_logo.svg" alt="palm" width="40" />
         </div>
 
         <!-- title and token address -->
