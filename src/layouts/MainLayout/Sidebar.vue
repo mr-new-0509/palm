@@ -18,7 +18,7 @@
         items-center
       "
     >
-      <template v-for="linkItem in links" :key="linkItem.to">
+      <!-- <template v-for="linkItem in links" :key="linkItem.to">
         <router-link
           v-if="linkItem.to === path"
           class="
@@ -38,7 +38,7 @@
         <router-link v-else class="mt-3 text-2xl text-white" :to="linkItem.to">
           <Icon :icon="linkItem.icon" />
         </router-link>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>
