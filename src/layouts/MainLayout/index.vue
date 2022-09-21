@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#121212] pb-12">
+  <div class="bg-[#121212]">
     <div class="flex flex-col min-h-screen">
       <nav-bar />
       <div class="relative px-12">

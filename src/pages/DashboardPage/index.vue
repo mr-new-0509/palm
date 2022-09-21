@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-8">
+  <div class="grid grid-cols-3 gap-8 pb-12">
     <div class="col-span-1">
       <!-- Trade -->
       <div class="flex items-center">
