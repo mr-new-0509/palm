@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-3 gap-8">
     <div class="col-span-1">
       <!-- Trade -->
       <div class="flex items-center">
@@ -114,7 +114,36 @@
       </div>
     </div>
 
-    <div class="col-span-2"></div>
+    <div class="col-span-2">
+      <!-- Chart -->
+      <div class="bg-[#2D2D2D] w-full h-96 rounded-2xl"></div>
+
+      <!-- Trade history -->
+      <div class="mt-6 flex items-center justify-between">
+        <div class="flex items-end">
+          <p class="text-2xl text-white font-semibold">Trade History</p>
+          <Icon
+            icon="dashicons:arrow-down-alt2"
+            class="ml-1 text-2xl text-white"
+          />
+        </div>
+
+        <div class="flex items-center">
+          <Icon icon="bi:funnel" class="text-white text-xl" />
+          <p class="ml-3 text-md text-white font-semibold">ETH</p>
+          <p class="ml-3 text-sm text-[#4D506A] font-semibold">
+            Last 521 Trades
+          </p>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="mt-3">
+        <template v-for="(historyItem, index) in tradeHistories" :key="index">
+          <table-row :historyItem="historyItem"></table-row>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -130,7 +159,7 @@ import {
   ArcElement,
   CategoryScale,
 } from "chart.js";
-import { PALM_TOKEN_ADDRESS } from "../../utils/constants";
+import { PALM_TOKEN_ADDRESS, UP, DOWN } from "../../utils/constants";
 import { handleLongText } from "../../utils/functions";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
@@ -141,6 +170,38 @@ export default {
     Icon,
     Doughnut,
     InfoCard: defineAsyncComponent(() => import("./InfoCard.vue")),
+    TableRow: defineAsyncComponent(() => import("./TableRow.vue")),
+  },
+
+  props: {
+    chartId: {
+      type: String,
+      default: "bar-chart",
+    },
+    datasetIdKey: {
+      type: String,
+      default: "label",
+    },
+    width: {
+      type: Number,
+      default: 200,
+    },
+    height: {
+      type: Number,
+      default: 200,
+    },
+    cssClasses: {
+      default: "",
+      type: String,
+    },
+    styles: {
+      type: Object,
+      default: () => {},
+    },
+    plugins: {
+      type: Array,
+      default: () => [],
+    },
   },
 
   data: () => ({
@@ -207,38 +268,45 @@ export default {
     chartOptions: {
       responsive: true,
     },
+    tradeHistories: [
+      {
+        date: "21.05.10",
+        priceInUsd: 981.47577,
+        status: UP,
+        priceInEth: 0.24984,
+        contractAddress: PALM_TOKEN_ADDRESS,
+      },
+      {
+        date: "21.05.10",
+        priceInUsd: 981.47577,
+        status: DOWN,
+        priceInEth: 0.24984,
+        contractAddress: PALM_TOKEN_ADDRESS,
+      },
+      {
+        date: "21.05.10",
+        priceInUsd: 981.47577,
+        status: UP,
+        priceInEth: 0.24984,
+        contractAddress: PALM_TOKEN_ADDRESS,
+      },
+      {
+        date: "21.05.10",
+        priceInUsd: 981.47577,
+        status: UP,
+        priceInEth: 0.24984,
+        contractAddress: PALM_TOKEN_ADDRESS,
+      },
+      {
+        date: "21.05.10",
+        priceInUsd: 981.47577,
+        status: UP,
+        priceInEth: 0.24984,
+        contractAddress: PALM_TOKEN_ADDRESS,
+      },
+    ],
   }),
 
-  props: {
-    chartId: {
-      type: String,
-      default: "bar-chart",
-    },
-    datasetIdKey: {
-      type: String,
-      default: "label",
-    },
-    width: {
-      type: Number,
-      default: 200,
-    },
-    height: {
-      type: Number,
-      default: 200,
-    },
-    cssClasses: {
-      default: "",
-      type: String,
-    },
-    styles: {
-      type: Object,
-      default: () => {},
-    },
-    plugins: {
-      type: Array,
-      default: () => [],
-    },
-  },
   methods: {
     handleLongText,
   },

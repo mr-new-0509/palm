@@ -2,9 +2,9 @@
   <div class="bg-[#121212] pb-12">
     <div class="flex flex-col min-h-screen">
       <nav-bar />
-      <div class="relative">
+      <div class="relative px-12">
         <side-barr />
-        <div class="ml-28">
+        <div class="container pl-12">
           <router-view />
         </div>
       </div>
