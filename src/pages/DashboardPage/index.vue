@@ -254,7 +254,7 @@ export default {
         iconBgColorClass: "bg-[#41709C]/[18%]",
         label: "Supply",
         value: "200000000",
-        isMoney: true,
+        isMoney: false,
       },
     ],
     chartData: {
